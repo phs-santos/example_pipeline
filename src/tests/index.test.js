@@ -8,6 +8,6 @@ describe("Teste Exemplo", () => {
         const segundoArgumento = 5
         const resultado = sum(primeiroArgumento, segundoArgumento)
 
-        expect(resultado).toEqual(primeiroArgumento * segundoArgumento)
+        expect(resultado).toEqual(primeiroArgumento + segundoArgumento)
     })
 })
