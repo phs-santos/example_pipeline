@@ -16,7 +16,7 @@ jobs:
     - name: Usando Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.x'
+        node-version: '20'
 
     - name: Instalando as dependencias
       run: npm install
