@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checar o codigo
+    - name: Checar o código
       uses: actions/checkout@v2
 
     - name: Usando Node.js
@@ -18,8 +18,23 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Instalando as dependencias
+    - name: Instalando as dependências
       run: npm install
 
     - name: Rodando os testes
       run: npm run test
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Vercel CLI
+      run: npm i -g vercel
+
+    - name: Deploy to Vercel
+      run: vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      env:
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
