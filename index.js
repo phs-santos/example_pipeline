@@ -1,3 +1,4 @@
 const app = require('./src/app')
+const PORT = 9001
 
-app.listen(9001, () => console.log('Server on in 9001'))
+app.listen(PORT, () => console.log(`Server rodando na porta ${PORT}`))
