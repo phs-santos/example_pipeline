@@ -10,8 +10,14 @@
     "start": "node index.js",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "pipeline",
+    "example",
+    "faculdade",
+    "devops",
+    "fatec"
+  ],
+  "author": "Paulo Souza",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.3"
