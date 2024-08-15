@@ -1,17 +1,7 @@
-const routes = require('express').Router();
+const routes        = require('express').Router();
+const UserRoutes    = require('./User');
 
-routes.get('/', (req, res) => {
-    res.status(200).send('Hello World!')
-})
-
-routes.post('/create', (req, res) => {
-    const { name, email } = req.body
-
-    if (!name || !email) {
-        return res.status(400).json({ status: 'error', message: 'Parâmetros inválidos!' })
-    }
-
-    res.json({ status: 'success', message: 'Usuário criado com sucesso!' })
-})
+routes.get('/', (req, res) => res.status(200).send('Hello World!'))
+routes.use('/users', UserRoutes);
 
 module.exports = routes
