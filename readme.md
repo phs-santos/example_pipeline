@@ -17,11 +17,9 @@ Para utilizar este projeto, siga as instruções abaixo:
 
 1. Clone o repositório em sua máquina local.
 2. Execute o comando `npm install` para instalar as dependências.
-3. Configure as variáveis de ambiente necessárias.
-4. Execute o comando `npm run build` para compilar o projeto.
+3. Configure as variáveis de ambiente necessárias (arquivo de exemplo na raiz do projeto).
 5. Execute o comando `npm run test` para executar os testes automatizados.
-6. Execute o comando `npm run deploy` para implantar o projeto.
-
+6. Execute o comando `npm run dev` para executar o servidor na porta definida no arquivo .env testes automatizados.
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias, correções de bugs ou novas funcionalidades.
