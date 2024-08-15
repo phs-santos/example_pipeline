@@ -11,15 +11,21 @@ describe('GET /', () => {
 })
 
 describe('POST /create', () => {
-    it('Deve retornar 200', () => {
-        request(app).post('/create').send({ name: 'John Doe', email: 'john.doe@teste.com' }).expect(200).then(response => {
-            expect(response.body).toEqual({ status: 'success', message: 'Usuário criado com sucesso!' })
-        })
-    })
+    it('Deve retornar 200 e mensagem de sucesso para dados válidos', async () => {
+        const response = await request(app)
+            .post('/create')
+            .send({ name: 'John Doe', email: 'john.doe@teste.com' })
+            .expect(200);
 
-    it('Deve retornar 400', () => {
-        request(app).post('/create').send({ name: '', email: '' }).expect(200).then(response => {
-            expect(response.body).toEqual({ status: 'error', message: 'Parâmetros inválidos!' })
-        })
-    })
-})
+        expect(response.body).toEqual({ status: 'success', message: 'Usuário criado com sucesso!' });
+    });
+
+    it('Deve retornar 400 e mensagem de erro para dados inválidos', async () => {
+        const response = await request(app)
+            .post('/create')
+            .send({ name: '', email: '' })
+            .expect(400);
+
+        expect(response.body).toEqual({ status: 'error', message: 'Parâmetros inválidos!' });
+    });
+});
